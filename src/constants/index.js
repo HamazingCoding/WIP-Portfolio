@@ -66,6 +66,19 @@ const technologies = [
 
 const experiences = [
   {
+    title: "Master Data Maintenance – Support Intern",
+    company_name: "ASSA ABLOY Opening Solutions Middle East · Dubai, UAE",
+    icon: backend,
+    iconBg: "#E6DEDD",
+    date: "2026",
+    points: [
+      "Maintain and analyze product and item master data within Microsoft Dynamics NAV (ERP) to ensure accuracy and consistency across records.",
+      "Use Microsoft Excel to filter, extract, clean, validate, and analyze master-data records; identify duplicate, blocked, and incompletely classified items.",
+      "Work with product classifications (PGR1–PGR4) and brand/grouping information to improve overall data quality.",
+      "Gain exposure to SQL/SQL Server for data retrieval and explore Python-based automation for repetitive data-maintenance tasks.",
+    ],
+  },
+  {
     title: "Game and Systems Programmer",
     company_name: "NovaDreamers Studio · Dubai, UAE",
     icon: web,
