@@ -3,13 +3,30 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
+import CanvasErrorBoundary from "../CanvasErrorBoundary";
+
+const MODEL_URL = "./desktop_pc/scene.gltf";
+const MODEL_BIN_URL = "./desktop_pc/scene.bin";
+
+const assetExists = async (url) => {
+  try {
+    const head = await fetch(url, { method: "HEAD" });
+    if (head.ok) return true;
+    if (head.status !== 405 && head.status !== 501) return false;
+
+    const get = await fetch(url, { method: "GET" });
+    return get.ok;
+  } catch {
+    return false;
+  }
+};
 
 const Computers = ({ isMobile }) => {
-  const computer = useGLTF("./desktop_pc/scene.gltf");
+  const computer = useGLTF(MODEL_URL);
 
   return (
     <mesh>
-      <hemisphereLight intensity={1} groundColor='black' />
+      <hemisphereLight intensity={1} groundColor="black" />
       <spotLight
         position={[-20, 50, 10]}
         angle={0.12}
@@ -31,47 +48,56 @@ const Computers = ({ isMobile }) => {
 
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [canRenderModel, setCanRenderModel] = useState(false);
 
   useEffect(() => {
-    // Add a listener for changes to the screen size
     const mediaQuery = window.matchMedia("(max-width: 500px)");
-
-    // Set the initial value of the `isMobile` state variable
     setIsMobile(mediaQuery.matches);
 
-    // Define a callback function to handle changes to the media query
     const handleMediaQueryChange = (event) => {
       setIsMobile(event.matches);
     };
 
-    // Add the callback function as a listener for changes to the media query
     mediaQuery.addEventListener("change", handleMediaQueryChange);
+    return () => mediaQuery.removeEventListener("change", handleMediaQueryChange);
+  }, []);
 
-    // Remove the listener when the component is unmounted
+  useEffect(() => {
+    let cancelled = false;
+
+    Promise.all([assetExists(MODEL_URL), assetExists(MODEL_BIN_URL)]).then(
+      ([gltfOk, binOk]) => {
+        if (!cancelled) setCanRenderModel(gltfOk && binOk);
+      }
+    );
+
     return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+      cancelled = true;
     };
   }, []);
 
-  return (
-    <Canvas
-      frameloop='demand'
-      shadows
-      dpr={[1, 2]}
-      camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
-    >
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-        />
-        <Computers isMobile={isMobile} />
-      </Suspense>
+  if (!canRenderModel) return null;
 
-      <Preload all />
-    </Canvas>
+  return (
+    <CanvasErrorBoundary>
+      <Canvas
+        frameloop="demand"
+        shadows
+        dpr={[1, 2]}
+        camera={{ position: [20, 3, 5], fov: 25 }}
+        gl={{ preserveDrawingBuffer: true }}
+      >
+        <Suspense fallback={<CanvasLoader />}>
+          <OrbitControls
+            enableZoom={false}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
+          />
+          <Computers isMobile={isMobile} />
+        </Suspense>
+        <Preload all />
+      </Canvas>
+    </CanvasErrorBoundary>
   );
 };
 

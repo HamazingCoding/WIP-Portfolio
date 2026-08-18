@@ -38,7 +38,7 @@ const Navbar = () => {
           <img src={logo} alt='logo' style={{ width: '100px', height: '100px' }} className='object-contain' />
           <p className='text-white text-[18px] font-bold cursor-pointer flex'>
             Hamza &nbsp;
-            <span className='sm:block hidden'> | Programmer</span>
+            <span className='sm:block hidden'> | Software Developer</span>
           </p>
         </Link>
 

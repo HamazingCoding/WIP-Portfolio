@@ -1,265 +1,228 @@
 import {
-    mobile,
-    backend,
-    creator,
-    web,
-    javascript,
-    typescript,
-    html,
-    css,
-    reactjs,
-    redux,
-    tailwind,
-    nodejs,
-    mongodb,
-    git,
-    figma,
-    docker,
-    meta,
-    starbucks,
-    tesla,
-    shopify,
-    carrent,
-    jobit,
-    tripguide,
-    threejs,
-  } from "../assets";
-  
-  export const navLinks = [
-    {
-      id: "about",
-      title: "About",
-    },
-    {
-      id: "work",
-      title: "Work",
-    },
-    {
-      id: "contact",
-      title: "Contact",
-    },
-  ];
-  
-  const services = [
-    {
-      title: "Web Developer",
-      icon: web,
-    },
-    {
-      title: "React Native Developer",
-      icon: mobile,
-    },
-    {
-      title: "Backend Developer",
-      icon: backend,
-    },
-    {
-      title: "Content Creator",
-      icon: creator,
-    },
-  ];
-  
-  const technologies = [
-    {
-      name: "HTML 5",
-      icon: html,
-    },
-    {
-      name: "CSS 3",
-      icon: css,
-    },
-    {
-      name: "JavaScript",
-      icon: javascript,
-    },
-    {
-      name: "TypeScript",
-      icon: typescript,
-    },
-    {
-      name: "React JS",
-      icon: reactjs,
-    },
-    {
-      name: "Redux Toolkit",
-      icon: redux,
-    },
-    {
-      name: "Tailwind CSS",
-      icon: tailwind,
-    },
-    {
-      name: "Node JS",
-      icon: nodejs,
-    },
-    {
-      name: "MongoDB",
-      icon: mongodb,
-    },
-    {
-      name: "Three JS",
-      icon: threejs,
-    },
-    {
-      name: "git",
-      icon: git,
-    },
-    {
-      name: "figma",
-      icon: figma,
-    },
-    {
-      name: "docker",
-      icon: docker,
-    },
-  ];
-  
-  const experiences = [
-    {
-      title: "React.js Developer",
-      company_name: "Starbucks",
-      icon: starbucks,
-      iconBg: "#383E56",
-      date: "March 2020 - April 2021",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
-    {
-      title: "React Native Developer",
-      company_name: "Tesla",
-      icon: tesla,
-      iconBg: "#E6DEDD",
-      date: "Jan 2021 - Feb 2022",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
-    {
-      title: "Web Developer",
-      company_name: "Shopify",
-      icon: shopify,
-      iconBg: "#383E56",
-      date: "Jan 2022 - Jan 2023",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
-    {
-      title: "Full stack Developer",
-      company_name: "Meta",
-      icon: meta,
-      iconBg: "#E6DEDD",
-      date: "Jan 2023 - Present",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
-  ];
-  
-  const testimonials = [
-    {
-      testimonial:
-        "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-      name: "Sara Lee",
-      designation: "CFO",
-      company: "Acme Co",
-      image: "https://randomuser.me/api/portraits/women/4.jpg",
-    },
-    {
-      testimonial:
-        "I've never met a web developer who truly cares about their clients' success like Rick does.",
-      name: "Chris Brown",
-      designation: "COO",
-      company: "DEF Corp",
-      image: "https://randomuser.me/api/portraits/men/5.jpg",
-    },
-    {
-      testimonial:
-        "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-      name: "Lisa Wang",
-      designation: "CTO",
-      company: "456 Enterprises",
-      image: "https://randomuser.me/api/portraits/women/6.jpg",
-    },
-  ];
-  
-  const projects = [
-    {
-      name: "Car Rent",
-      description:
-        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
-      tags: [
-        {
-          name: "react",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "mongodb",
-          color: "green-text-gradient",
-        },
-        {
-          name: "tailwind",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: carrent,
-      source_code_link: "https://github.com/",
-    },
-    {
-      name: "Job IT",
-      description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-      tags: [
-        {
-          name: "react",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "restapi",
-          color: "green-text-gradient",
-        },
-        {
-          name: "scss",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: jobit,
-      source_code_link: "https://github.com/",
-    },
-    {
-      name: "Trip Guide",
-      description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-      tags: [
-        {
-          name: "nextjs",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "supabase",
-          color: "green-text-gradient",
-        },
-        {
-          name: "css",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: tripguide,
-      source_code_link: "https://github.com/",
-    },
-  ];
-  
-  export { services, technologies, experiences, testimonials, projects };
+  mobile,
+  backend,
+  creator,
+  web,
+  javascript,
+  html,
+  css,
+  reactjs,
+  tailwind,
+  git,
+  threejs,
+  python,
+  csharp,
+  unity,
+  angular,
+} from "../assets";
+
+export const navLinks = [
+  {
+    id: "about",
+    title: "About",
+  },
+  {
+    id: "work",
+    title: "Work",
+  },
+  {
+    id: "contact",
+    title: "Contact",
+  },
+];
+
+const services = [
+  {
+    title: "Game Developer",
+    icon: web,
+  },
+  {
+    title: "Security Researcher",
+    icon: mobile,
+  },
+  {
+    title: "ERP / Full-Stack",
+    icon: backend,
+  },
+  {
+    title: "AI Systems",
+    icon: creator,
+  },
+];
+
+const technologies = [
+  { name: "JavaScript", icon: javascript },
+  { name: "HTML 5", icon: html },
+  { name: "CSS 3", icon: css },
+  { name: "Python", icon: python },
+  { name: "C#", icon: csharp },
+  { name: "Unity", icon: unity },
+  { name: "Angular", icon: angular },
+  { name: "React JS", icon: reactjs },
+  { name: "Tailwind CSS", icon: tailwind },
+  { name: "Three JS", icon: threejs },
+  { name: "git", icon: git },
+];
+
+const experiences = [
+  {
+    title: "Game and Systems Programmer",
+    company_name: "NovaDreamers Studio · Dubai, UAE",
+    icon: web,
+    iconBg: "#383E56",
+    date: "2025",
+    points: [
+      "Designed and implemented core gameplay systems in Unity for Area Guardians, a 3D tower defense game: turret behavior, enemy AI with obstacle-aware pathfinding, health/score, shop, and camera controls.",
+      "Architected Candy Catcher systems including spawners, collectibles, player interaction, and event-driven game state management.",
+      "Built and deployed the studio website with a responsive layout, portfolio showcase, and contact flow.",
+    ],
+  },
+  {
+    title: "Research & Security Intern",
+    company_name: "ARMSS · Dubai, UAE",
+    icon: mobile,
+    iconBg: "#E6DEDD",
+    date: "2025",
+    points: [
+      "Ran cybersecurity research on system vulnerabilities, attack simulation, and defensive strategies in supervised test environments.",
+      "Performed penetration testing and network scanning with Nmap, Metasploit, Burp Suite, Wireshark, Netstat, and pktmon.",
+      "Documented attack vectors, risks, and mitigations for web apps, network services, and authentication in structured technical reports.",
+    ],
+  },
+  {
+    title: "ERP Software Developer",
+    company_name: "ProcessFZE · Dubai, UAE",
+    icon: backend,
+    iconBg: "#383E56",
+    date: "2025",
+    points: [
+      "Developed ERP modules in Angular and implemented backend logic for business workflow automation.",
+      "Shipped production-ready features that automated critical operations and met enterprise requirements.",
+      "Worked in a GitHub-based team workflow with code reviews and quality standards.",
+    ],
+  },
+  {
+    title: "Software Development Intern",
+    company_name: "Infinix Innovations · Dubai, UAE",
+    icon: creator,
+    iconBg: "#E6DEDD",
+    date: "2025",
+    points: [
+      "Built the AlYoum Unity app with English and Arabic localization and a client-ready interface.",
+      "Delivered the product to client expectations, including usability and bilingual support.",
+    ],
+  },
+  {
+    title: "Computer Programming Intern",
+    company_name: "SparksLab Technology · Dubai, UAE",
+    icon: web,
+    iconBg: "#383E56",
+    date: "2024",
+    points: [
+      "Built AI canvas generation and a live photobooth with Python and Stable Diffusion (image-to-image on live frames).",
+      "Created Kinect motion tracking in Unity and a VR 3D drawing experience with gesture-driven menus.",
+      "Designed a configurable AI video generation workflow that can run against any Stable Diffusion model.",
+    ],
+  },
+];
+
+const testimonials = [
+  {
+    testimonial:
+      "3rd place in the IEEE 24 Hour Coding Challenge at university level — a full-day sprint in problem solving under time pressure.",
+    name: "IEEE Challenge",
+    designation: "University coding competition",
+    company: "2020s",
+  },
+  {
+    testimonial:
+      "Ethereum Fundamentals Program with Kerala Blockchain Academy, plus CUDA C++ and data science coursework from Cisco and Udemy.",
+    name: "Certifications",
+    designation: "Blockchain, CUDA, Data Science",
+    company: "2024",
+  },
+  {
+    testimonial:
+      "Active in regional hackathons and workshops: Abu Dhabi Compass, CodersHQ OpenAI Whisper, WIEHACK 5.0, and Vonage.",
+    name: "Hackathons",
+    designation: "Community & events",
+    company: "2022–2024",
+  },
+];
+
+const projects = [
+  {
+    name: "HumanFirewallAI",
+    description:
+      "AI-powered system to detect social engineering: vishing, deepfakes, and text phishing, with work toward real-time call audio analysis.",
+    tags: [
+      { name: "python", color: "blue-text-gradient" },
+      { name: "ml", color: "green-text-gradient" },
+      { name: "security", color: "pink-text-gradient" },
+    ],
+    image: creator,
+    source_code_link: "https://github.com/HamazingCoding",
+  },
+  {
+    name: "Area Guardians",
+    description:
+      "3D tower defense game in Unity with turret AI, obstacle-aware pathfinding, shop systems, scoring, audio, and camera controls.",
+    tags: [
+      { name: "unity", color: "blue-text-gradient" },
+      { name: "csharp", color: "green-text-gradient" },
+      { name: "gamedev", color: "pink-text-gradient" },
+    ],
+    image: web,
+    source_code_link: "",
+  },
+  {
+    name: "Indoor Navigation (AR)",
+    description:
+      "Prototype indoor wayfinding app using AR Foundation and Unity for location tracking and AR-based navigation cues.",
+    tags: [
+      { name: "unity", color: "blue-text-gradient" },
+      { name: "ar", color: "green-text-gradient" },
+      { name: "mobile", color: "pink-text-gradient" },
+    ],
+    image: mobile,
+    source_code_link: "",
+  },
+  {
+    name: "Live AI Photobooth",
+    description:
+      "Real-time photobooth that runs video frames through Stable Diffusion image-to-image generation during live sessions.",
+    tags: [
+      { name: "python", color: "blue-text-gradient" },
+      { name: "stablediffusion", color: "green-text-gradient" },
+      { name: "ai", color: "pink-text-gradient" },
+    ],
+    image: backend,
+    source_code_link: "",
+  },
+  {
+    name: "IoT Face Attendance",
+    description:
+      "Raspberry Pi + OpenCV facial recognition attendance system that sends records to a remote server.",
+    tags: [
+      { name: "opencv", color: "blue-text-gradient" },
+      { name: "raspberrypi", color: "green-text-gradient" },
+      { name: "iot", color: "pink-text-gradient" },
+    ],
+    image: mobile,
+    source_code_link: "",
+  },
+  {
+    name: "AI Worm Morris 2",
+    description:
+      "Research on malware-style attacks against AI systems: simulated vectors, model vulnerabilities, and defensive mitigations.",
+    tags: [
+      { name: "research", color: "blue-text-gradient" },
+      { name: "ai-security", color: "green-text-gradient" },
+      { name: "defense", color: "pink-text-gradient" },
+    ],
+    image: creator,
+    source_code_link: "",
+  },
+];
+
+export { services, technologies, experiences, testimonials, projects };
